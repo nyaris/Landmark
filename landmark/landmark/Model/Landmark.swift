@@ -15,6 +15,15 @@ struct Landmark: Codable, Identifiable, Equatable {
     let state: String
     let description: String
     var isFavorite: Bool
+    var isFeatured: Bool
+
+    var category: Category
+    enum Category: String, CaseIterable, Codable {
+        case lakes = "Lakes"
+        case rivers = "Rivers"
+        case mountains = "Mountains"
+    }
+                
     private let imageName: String
     private let coordinates: Coordinates
 
